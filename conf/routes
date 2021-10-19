@@ -1,0 +1,12 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET           /                                                 controllers.GeoController.index()
+GET           /geo/marks/$userId<\d+>/near                      controllers.GeoController.isNear(userId: Long, lon: Double, lat: Double)
+POST          /geo/marks                                        controllers.GeoController.saveMark()
+PUT           /geo/marks/$userId<\d+>                           controllers.GeoController.updateMark(userId: Long)
+DELETE        /geo/marks/$userId<\d+>                           controllers.GeoController.deleteMark(userId: Long)
+GET           /geo/marks/at                                     controllers.GeoController.statistics(lon: Double, lat: Double)
+PUT           /geo/web/cells/$tileX<-?\d+>/$tileY<-?\d+>        controllers.GeoController.putCell(tileX: Int, tileY: Int, distanceError: Double)
