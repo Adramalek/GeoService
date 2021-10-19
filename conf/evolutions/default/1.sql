@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS user_marks (
     CONSTRAINT user_marks_pk PRIMARY KEY (user_id)
 );
 
-CREATE INDEX IF NOT EXISTS user_marks__coordinates_nui ON user_marks (lon, lat);
+CREATE INDEX IF NOT EXISTS user_marks__coordinates_nui ON user_marks (floor(lon), floor(lat));
 
 -- !Downs
 
